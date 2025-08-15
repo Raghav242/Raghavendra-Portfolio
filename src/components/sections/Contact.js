@@ -25,59 +25,27 @@ const Contact = () => {
     setFormData({ name: '', email: '', message: '' });
   };
 
-  const sectionStyle = {
-    padding: '4rem 0',
-    scrollMarginTop: '80px'
-  };
-
-  const containerStyle = {
-    maxWidth: '1200px',
-    margin: '0 auto',
-    padding: '0 2rem'
-  };
-
-  const titleStyle = {
-    fontSize: '2.5rem',
-    fontWeight: 700,
-    marginBottom: '1rem',
-    textAlign: 'center',
-    color: 'var(--text-primary)',
-    marginTop: '1rem'
-  };
-
-  const gridStyle = {
-    display: 'grid',
-    gridTemplateColumns: '1fr 1fr',
-    gap: '2.5rem',
-    maxWidth: '900px',
-    margin: '0 auto'
-  };
-
-  const formStyle = {
-    background: 'var(--bg-card)',
-    border: '1px solid var(--border-color)',
-    borderRadius: 'var(--border-radius)',
-    padding: '1.5rem'
-  };
-
-  const inputStyle = {
-    width: '100%',
-    padding: '10px',
-    background: 'var(--bg-secondary)',
-    border: '1px solid var(--border-color)',
-    borderRadius: 'var(--border-radius)',
-    color: 'var(--text-primary)',
-    fontSize: '0.9rem'
-  };
-
   return (
-    <section id="contact" style={sectionStyle}>
-      <div style={containerStyle}>
-        <h2 style={titleStyle}>
+    <section id="contact" style={{ padding: '4rem 0', scrollMarginTop: '80px' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+        <h2 style={{ 
+          fontSize: '2.5rem', 
+          fontWeight: 700, 
+          marginBottom: '1rem', 
+          textAlign: 'center',
+          color: 'var(--text-primary)',
+          marginTop: '1rem'
+        }}>
           Let's Work Together
         </h2>
         
-        <div style={gridStyle}>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: '2.5rem',
+          maxWidth: '900px',
+          margin: '0 auto'
+        }}>
           <div>
             <h3 style={{
               fontSize: '1.4rem',
@@ -204,7 +172,7 @@ const Contact = () => {
               </a>
               
               <a 
-                href="/Raghavendra_Kulkarni_Resume.pdf" 
+                href={`${process.env.PUBLIC_URL}/assets/resume/Raghavendra_Kulkarni_Resume.pdf`}
                 target="_blank"
                 rel="noopener noreferrer"
                 download="Raghavendra_Kulkarni_Resume.pdf"
@@ -227,7 +195,12 @@ const Contact = () => {
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} style={formStyle}>
+          <form onSubmit={handleSubmit} style={{
+            background: 'var(--bg-card)',
+            border: '1px solid var(--border-color)',
+            borderRadius: 'var(--border-radius)',
+            padding: '1.5rem'
+          }}>
             <div style={{ marginBottom: '1rem' }}>
               <label htmlFor="name" style={{
                 display: 'block',
@@ -245,7 +218,15 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleInputChange}
                 required 
-                style={inputStyle}
+                style={{
+                  width: '100%',
+                  padding: '10px',
+                  background: 'var(--bg-secondary)',
+                  border: '1px solid var(--border-color)',
+                  borderRadius: 'var(--border-radius)',
+                  color: 'var(--text-primary)',
+                  fontSize: '0.9rem'
+                }}
               />
             </div>
             
@@ -266,7 +247,15 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleInputChange}
                 required 
-                style={inputStyle}
+                style={{
+                  width: '100%',
+                  padding: '10px',
+                  background: 'var(--bg-secondary)',
+                  border: '1px solid var(--border-color)',
+                  borderRadius: 'var(--border-radius)',
+                  color: 'var(--text-primary)',
+                  fontSize: '0.9rem'
+                }}
               />
             </div>
             
@@ -287,7 +276,13 @@ const Contact = () => {
                 onChange={handleInputChange}
                 required
                 style={{
-                  ...inputStyle,
+                  width: '100%',
+                  padding: '10px',
+                  background: 'var(--bg-secondary)',
+                  border: '1px solid var(--border-color)',
+                  borderRadius: 'var(--border-radius)',
+                  color: 'var(--text-primary)',
+                  fontSize: '0.9rem',
                   minHeight: '70px',
                   resize: 'vertical',
                   fontFamily: 'inherit'

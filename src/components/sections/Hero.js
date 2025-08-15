@@ -9,7 +9,8 @@ const Hero = () => {
 
   const downloadResume = async () => {
     try {
-      const response = await fetch('/assets/resume/Raghavendra_Kulkarni_Resume.pdf');
+      const resumePath = `${process.env.PUBLIC_URL}/assets/resume/Raghavendra_Kulkarni_Resume.pdf`;
+      const response = await fetch(resumePath);
       if (response.ok) {
         const blob = await response.blob();
         const url = window.URL.createObjectURL(blob);
@@ -22,12 +23,13 @@ const Hero = () => {
         window.URL.revokeObjectURL(url);
       } else {
         // Fallback: try to open in new tab
-        window.open('/assets/resume/Raghavendra_Kulkarni_Resume.pdf', '_blank');
+        window.open(resumePath, '_blank');
       }
     } catch (error) {
       console.error('Error downloading resume:', error);
       // Fallback: try to open in new tab
-      window.open('/assets/resume/Raghavendra_Kulkarni_Resume.pdf', '_blank');
+      const resumePath = `${process.env.PUBLIC_URL}/assets/resume/Raghavendra_Kulkarni_Resume.pdf`;
+      window.open(resumePath, '_blank');
     }
   };
 
