@@ -52,9 +52,9 @@ const Hero = () => {
     <section className="hero" id="home">
       <div className="hero-container">
         <div className={`hero-avatar ${isVisible ? 'animate-in' : ''}`}>
-          {/* Replace with your actual photo */}
+          {/* Profile image with fallback */}
           <img 
-            src="/assets/images/profile.jpg" 
+            src={`${process.env.PUBLIC_URL}/assets/images/profile.jpg`}
             alt="Raghavendra Kulkarni"
             style={{
               width: '100%',
@@ -68,7 +68,16 @@ const Hero = () => {
               e.target.nextSibling.style.display = 'flex';
             }}
           />
-          <div style={{ display: 'none', width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center', fontSize: '4rem' }}>
+          <div style={{ 
+            display: 'none', 
+            width: '100%', 
+            height: '100%', 
+            alignItems: 'center', 
+            justifyContent: 'center', 
+            fontSize: '4rem',
+            background: 'var(--accent-gradient)',
+            borderRadius: '50%'
+          }}>
             <i className="fas fa-user"></i>
           </div>
         </div>
@@ -125,7 +134,6 @@ const Hero = () => {
         .hero-container {
           max-width: 1200px;
           margin: 0 auto;
-          margin-top: 30px;
           padding: 0 2rem;
           text-align: center;
         }

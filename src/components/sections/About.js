@@ -27,9 +27,9 @@ const About = () => {
         <div className="about-grid">
           <div className={`about-image fade-in ${inView ? 'visible' : ''}`}>
             <div className="about-photo">
-              {/* Replace with your actual photo */}
+              {/* Profile photo with fallback */}
               <img 
-                src="/assets/images/profile-about.jpg" 
+                src={`${process.env.PUBLIC_URL}/assets/images/profile-about.jpg`}
                 alt="Raghavendra Kulkarni"
                 style={{
                   width: '100%',
