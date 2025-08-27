@@ -8,9 +8,10 @@ const About = () => {
   });
 
   const stats = [
-    { number: '2+', label: 'Years Experience' },
-    { number: '10+', label: 'Projects Built' },
-    { number: '40%', label: 'Deployment Efficiency Gain' }
+    { number: 'SDE roles', label: 'Looking for' },
+    { number: 'Boston', label: 'Current Location' },
+    { number: 'May 2026', label: 'Expected Graduation' }
+    
   ];
 
   return (
@@ -61,15 +62,16 @@ const About = () => {
           
           <div className={`about-content fade-in ${inView ? 'visible' : ''}`}>
             <h3>Full Stack Developer & Computer Science Student</h3>
-            <p>
-              I'm currently pursuing my Master's in Computer Science at Northeastern University while bringing 
-              2+ years of professional experience from Cognizant Technology Solutions, where I worked on 
-              SAP's Service Provider Cockpit and enterprise microservices.
+            <p> 
+              I’m a full-stack engineer who loves building systems that scale, 
+              simplify, and make a difference. For me, great engineering is more than just writing code—it’s 
+              about shaping experiences, solving problems at their core, and pushing technology to deliver impact that lasts. 
             </p>
-            <p>
-              My expertise spans from React frontends to Spring Boot backends, with hands-on experience in 
-              containerization, cloud deployment, and DevOps practices. I'm passionate about building 
-              scalable solutions that make a real impact.
+            <p> 
+              Currently pursuing my MS in Computer Science at Northeastern University, 
+              I’m focused on cloud-native development, DevOps automation, and future-ready architectures. 
+              I thrive in fast-paced environments, embrace challenges with curiosity, and believe in creating 
+              technology that feels as seamless as it is powerful. 
             </p>
             
             <div className="about-stats">
@@ -79,8 +81,8 @@ const About = () => {
                   className={`stat fade-in ${inView ? 'visible' : ''}`}
                   style={{ transitionDelay: `${0.8 + (index * 0.1)}s` }}
                 >
-                  <div className="stat-number">{stat.number}</div>
                   <div className="stat-label">{stat.label}</div>
+                  <div className="stat-number">{stat.number}</div>
                 </div>
               ))}
             </div>
@@ -121,7 +123,7 @@ const About = () => {
         }
 
         .about-content h3 {
-          font-size: 2rem;
+          font-size: 1.8rem;
           margin-bottom: 1rem;
         }
 
