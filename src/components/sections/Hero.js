@@ -56,7 +56,7 @@ const Hero = () => {
         <div className={`hero-avatar ${isVisible ? 'animate-in' : ''}`}>
           {/* Profile image with fallback */}
           <img 
-            src={`${process.env.PUBLIC_URL}/assets/images/profile.jpg`}
+            src={`${process.env.PUBLIC_URL}/assets/images/profile1.jpg`}
             alt="Raghavendra Kulkarni"
             style={{
               width: '100%',
